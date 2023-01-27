@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color:#EEE;
-    font-family:sans-serif;
+    
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 90%, rgba(157,157,157,1) 94%, rgba(1,1,1,1) 98%); 
+    font-family: 'Varela Round', sans-serif;
     font-size:15px;
     display:flex;
     margin:0;
     min-height:100vh;
+
 }
+
+/* .bags {
+    display:none;
+} */
 
 header {
     position: fixed;
@@ -18,7 +27,7 @@ header {
     top:0;
     right:0;
     height:90px;
-    background-color:#d32f2f;
+    background-color:white;
     display:flex; 
     justify-content:space-between;
     align-items: center;
@@ -26,5 +35,94 @@ header {
 
 header h1 {
     margin-left: 1rem;
-    color: #fff;
+    color:black;
+
+    
+}
+
+.bag-area {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bag-item{
+    text-align: center;
+    max-width:250px;
+    margin:0 auto 50px auto;
+
+    
+    
+}
+
+.bag-item a{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    text-decoration: none;
+}
+
+.item-img{
+    width:200px;
+    height:200px;
+    background-color:#EEE;
+    border-radius:100px;
+    box-shadow:0px 10px 50px rgba(0, 0, 0, 0.2);
+}
+
+.item-img img{
+    width:50%;
+    height:auto;
+    border-radius:100px;
+    width:200px;
+    height:200px;
+
+}
+
+
+h2{
+    color:white;
+    text-align:center
+}
+
+main {
+    flex:1;
+    padding:20px;
+    margin-top:60px;
+}
+
+.add-item {
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border-radius:25px;
+    background-color:#d32f2f;
+    text-align:center;
+    color:#FFF;
+    font-size:22px;
+    cursor:pointer;
+    margin-top:-25px;
+    transition:all ease .2s;
+}
+
+.bag-item a:hover .add-item {
+    background-color:#b71c1c;
+}
+
+.bag-item--price {
+    font-size:15px;
+    color:#333;
+    margin-top:5px;
+}
+
+.bag-item--name {
+    font-size:20px;
+    font-weight: bold;
+    color:#000;
+    margin-top:5px;
+}
+
+.bag-item--note {
+    font-size:13px;
+    color:#555;
+    margin-top:10px;
 }
