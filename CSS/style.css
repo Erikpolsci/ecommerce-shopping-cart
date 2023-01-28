@@ -22,7 +22,7 @@ body {
 } */
 
 header {
-    position: fixed;
+    position: absolute;
     left:0;
     top:0;
     right:0;
@@ -40,6 +40,10 @@ header h1 {
     
 }
 
+.main-menu{
+
+    margin-right:10px;
+}
 .bag-area {
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -49,6 +53,7 @@ header h1 {
     text-align: center;
     max-width:250px;
     margin:0 auto 50px auto;
+    
 
     
     
@@ -90,6 +95,7 @@ main {
     margin-top:60px;
 }
 
+
 .add-item {
     width:50px;
     height:50px;
@@ -125,4 +131,12 @@ main {
     font-size:13px;
     color:#555;
     margin-top:10px;
+}
+
+aside {
+    background-color:#ffcdd2;
+    width:0vw;
+    font-family:'Hepta Slab', Helvetica, Arial;
+    transition:all ease .2s;
+    overflow-x:hidden;
 }
