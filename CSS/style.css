@@ -8,7 +8,7 @@
 body {
     
     background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 90%, rgba(157,157,157,1) 94%, rgba(1,1,1,1) 98%); 
+    background: linear-gradient(0deg, rgba(255,255,255,1) 63%, rgba(157,157,157,1) 75%, rgba(1,1,1,1) 88%); 
     font-family: 'Varela Round', sans-serif;
     font-size:15px;
     display:flex;
@@ -17,9 +17,9 @@ body {
 
 }
 
-/* .bags {
+.bags {
     display:none;
-} */
+}
 
 header {
     position: absolute;
@@ -36,6 +36,17 @@ header {
 header h1 {
     margin-left: 1rem;
     color:black;
+    align-items: center;
+    
+
+
+    
+}
+
+header img{
+    height: 4rem;
+    margin-right:95rem;
+    margin-bottom:10px;
 
     
 }
@@ -53,8 +64,7 @@ header h1 {
     text-align: center;
     max-width:250px;
     margin:0 auto 50px auto;
-    
-
+    padding:20px;
     
     
 }
@@ -70,14 +80,14 @@ header h1 {
     width:200px;
     height:200px;
     background-color:#EEE;
-    border-radius:100px;
+    border-radius:50px;
     box-shadow:0px 10px 50px rgba(0, 0, 0, 0.2);
 }
 
 .item-img img{
     width:50%;
     height:auto;
-    border-radius:100px;
+    border-radius:50px;
     width:200px;
     height:200px;
 
@@ -91,7 +101,7 @@ h2{
 
 main {
     flex:1;
-    padding:20px;
+    padding:80px;
     margin-top:60px;
 }
 
@@ -133,10 +143,125 @@ main {
     margin-top:10px;
 }
 
+
+
 aside {
     background-color:#ffcdd2;
     width:0vw;
-    font-family:'Hepta Slab', Helvetica, Arial;
+    font-family:'Varela Round', sans-serif;
     transition:all ease .2s;
     overflow-x:hidden;
 }
+
+.main-menu{
+    background-color:#D3D3D3;
+    margin-right: 15px;
+    font-size: 26px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modalWindow {
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background-color:rgba(255, 255, 255, 0.5);
+    display:none;
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y:auto;
+}
+
+/* <!--/modalWindow--> */
+
+.windowBody {
+    width:900px;
+    background-color:#FFF;
+    border-radius:10px;
+    box-shadow:0px 0px 15px #999;
+    display:flex;
+    margin:20px 0px;
+}
+
+.bagInfo {
+    flex:1;
+    font-family:'Varela Round', sans-serif;
+    margin:70px;
+}
+
+.pizzaInfo h1 {
+    margin-top:50px;
+}
+
+.imgBag{
+    flex:1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgBag img{
+    height:350px;
+    width:auto;
+    margin:20px;
+    border-radius:10px;
+}
+
+
+.bagInfo--qtarea button {
+    border:0;
+    background-color:transparent;
+    font-size:17px;
+    outline:0;
+    cursor:pointer;
+    padding:0px 10px;
+    color:#333;
+}
+
+.bagInfo--qtarea {
+    display:inline-flex;
+    background-color:#EEE;
+    border-radius:10px;
+    height:30px;
+    align-items: center;
+
+    
+}
+
+.bagInfo--addButton {
+    margin-top:30px;
+    padding:20px 30px;
+    border-radius:20px;
+    background-color:#FF5733 ;
+    color:#FFF;
+    display:inline-block;
+    cursor:pointer;
+    margin-right:30px;
+}
+
+.bagInfo--addButton:hover {
+    background-color:#FFBD33;
+}
+
+.bagInfo--cancelButton {
+    display:inline-block;
+    cursor:pointer;
+}
+
+.bagInfo--actualPrice {
+    font-size:2rem;
+}
+
+.bagInfo--sector{
+    color:#CCC;
+    text-transform: uppercase;
+    font-size:14px;
+    margin-top:30px;
+    margin-bottom:10px;
+    
+}
+
