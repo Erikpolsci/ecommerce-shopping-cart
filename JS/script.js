@@ -1,6 +1,12 @@
 const select = (element) => document.querySelector(element);
 const selectAll = (element) => document.querySelectorAll(element);
 
+
+let cart = []
+
+
+
+
 const openModalWindow = () => {
     select('.modalWindow').style.opacity = 0;
     select('.modalWindow').style.display = 'flex';
@@ -36,7 +42,22 @@ const fillModalInfo = (item) => {
     select('.bagInfo--notes').innerHTML = item.notes;
     select('.bagInfo--actualPrice').innerHTML = `$ ${item.price}`;
 }
+let bagQtt = 1;
+const quantity = () => {
+    select('.bagInfo--qttadd').addEventListener('click', () =>{
+        bagQtt++
+        select('.bagInfo--qt').innerHTML = bagQtt
+    })
 
+    select('.bagInfo--qttminus').addEventListener('click', () =>{
+        if(bagQtt > 1) {
+            bagQtt--
+            select('.bagInfo--qt').innerHTML = bagQtt
+        }
+    })
+
+    console.log('.bagInfo--qttadd')
+}
 
 
 bagsJson.map((item, i) => {
@@ -56,6 +77,7 @@ bagsJson.map((item, i) => {
         //console.log(openModalWindow)
         fillModalInfo(item);
 
+        select('.bagInfo--qt').innerHTML = bagQtt
 
 
 
@@ -65,15 +87,6 @@ bagsJson.map((item, i) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 })
+
+quantity();
