@@ -146,11 +146,21 @@ main {
 
 
 aside {
-    background-color:#ffcdd2;
-    width:0vw;
-    font-family:'Varela Round', sans-serif;
+    background-color:#333333;
+    width:auto;
+    right:0;
+    left:100vw;
+    top:0;
+    bottom:0;
     transition:all ease .2s;
-    overflow-x:hidden;
+}
+
+aside.show {
+    width:auto;
+}
+
+.cart {
+    width:25vw;
 }
 
 .main-menu{
@@ -264,4 +274,6 @@ aside {
     margin-bottom:10px;
     
 }
+
+
 

@@ -3,7 +3,8 @@ const selectAll = (element) => document.querySelectorAll(element);
 
 
 let cart = []
-
+let bagQtt = 1;
+let modalKey = 0;
 
 
 
@@ -27,7 +28,9 @@ const btnClose = () => {
     select('.bagInfo--cancelButton').addEventListener('click', closeModalWindow)
 }
 
-const fillBagItemsInfo = (bagItem, item) => {
+const fillBagItemsInfo = (bagItem, item, index) => {
+    
+    bagItem.setAttribute('data-key', index)
     bagItem.querySelector('.item-img img').src = item.img
     bagItem.querySelector('.bag-item--price').innerHTML = `$ ${item.price}`;
     bagItem.querySelector('.bag-item--name').innerHTML = item.name;
@@ -42,7 +45,7 @@ const fillModalInfo = (item) => {
     select('.bagInfo--notes').innerHTML = item.notes;
     select('.bagInfo--actualPrice').innerHTML = `$ ${item.price}`;
 }
-let bagQtt = 1;
+
 const quantity = () => {
     select('.bagInfo--qttadd').addEventListener('click', () =>{
         bagQtt++
@@ -59,6 +62,31 @@ const quantity = () => {
     console.log('.bagInfo--qttadd')
 }
 
+const addToCart = () => {
+    select('.bagInfo--addButton').addEventListener('click', () => {
+        console.log('added')
+        let price = (item) => {
+            select('.bagInfo--actualPrice').innerHTML = `$ ${item.price}`;
+        }
+
+        let bagId = bagsJson.id
+        console.log('aqui'+ bagId)
+
+        let key = cart.findIndex( (item) => item.bagId == bagId)
+        console.log(key)
+        if(key > -1) {
+            cart[key].qt += bagQtt
+        }else {
+            let coffee = {
+                bagId,
+                qt: bagsJson.id,
+                price: bagsJson.price
+            }
+            cart.push(coffee)
+            console.log(coffee)
+        }
+    })
+}
 
 bagsJson.map((item, i) => {
 
@@ -68,7 +96,7 @@ bagsJson.map((item, i) => {
 
     select('.bag-area').append(bagItem);
 
-    fillBagItemsInfo(bagItem, item);
+    fillBagItemsInfo(bagItem, item, index);
 
     bagItem.querySelector('.bag-item a').addEventListener('click', (e) => {
         e.preventDefault()
@@ -90,3 +118,4 @@ bagsJson.map((item, i) => {
 })
 
 quantity();
+addToCart();
