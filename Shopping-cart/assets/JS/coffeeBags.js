@@ -2,7 +2,7 @@ let bagsJson = [
     {
       id: 1,
       name: "Kaua Coffee",
-      img: "./Shopping-cart/assets/images/IMG_7423.JPG",
+      img: "./Shopping-cart/assets/Images/IMG_7423.JPG",
       price: 25.00,
       notes: "Vanilla, molasses, floral"
     },
